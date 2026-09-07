@@ -30,3 +30,16 @@ contract WeightedVoting is ERC20 {
         bool passed; // Flag indicating if the issue passed
         bool closed; // Flag indicating if the issue is closed
     }
+
+    // Struct to represent a serialized issue
+    struct SerializedIssue {
+        address[] voters; // Array of voters
+        string issueDesc; // Description of the issue
+        uint256 quorum; // Quorum required to close the issue
+        uint256 totalVotes; // Total number of votes casted
+        uint256 votesFor; // Total number of votes in favor
+        uint256 votesAgainst; // Total number of votes against
+        uint256 votesAbstain; // Total number of abstained votes
+        bool passed; // Flag indicating if the issue passed
+        bool closed; // Flag indicating if the issue is closed
+    }
