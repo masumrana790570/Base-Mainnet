@@ -27,3 +27,12 @@ uint256 constant Y2K = 946702800; // Constant representing the Unix timestamp fo
     function resetNumbers() public {
         numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
+
+    // Function to append new numbers to the numbers array
+    function appendToNumbers(uint[] calldata _toAppend) public {
+        // Iterate through the array to be appended
+        for (uint i = 0; i < _toAppend.length; i++) {
+            // Push each element of the array to be appended to the numbers array
+            numbers.push(_toAppend[i]);
+        }
+    }
