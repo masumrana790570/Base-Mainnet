@@ -1,3 +1,11 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.17;
+
+/**
+ * @title Employee
+ * @dev Abstract contract defining common properties and behavior for employees.
+ */
+abstract contract Employee {
+    uint public idNumber; // Unique identifier for the employee
+    uint public managerId; // Identifier of the manager overseeing the employee
