@@ -22,3 +22,8 @@ uint256 constant Y2K = 946702800; // Constant representing the Unix timestamp fo
         // Return the memory array
         return results;
     }
+
+    // Function to reset the numbers array to its initial values
+    function resetNumbers() public {
+        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    }
