@@ -23,3 +23,13 @@ contract ImportsExercise {
     function getHaiku() public view returns (SillyStringUtils.Haiku memory) {
         return haiku;
     }
+
+    // Function to append a shrugging emoji to the third line of the Haiku
+    function shruggieHaiku() public view returns (SillyStringUtils.Haiku memory) {
+        // Creating a copy of the Haiku
+        SillyStringUtils.Haiku memory newHaiku = haiku;
+        // Appending the shrugging emoji to the third line using the shruggie function from the SillyStringUtils library
+        newHaiku.line3 = newHaiku.line3.shruggie();
+        return newHaiku;
+    }
+}
