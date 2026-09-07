@@ -53,3 +53,6 @@ contract WeightedVoting is ERC20 {
 
     // Array to store all issues
     Issue[] internal issues;
+
+    // Mapping to track if tokens are claimed by an address
+    mapping(address => bool) public tokensClaimed;
