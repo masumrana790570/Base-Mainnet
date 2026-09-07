@@ -43,3 +43,10 @@ contract WeightedVoting is ERC20 {
         bool passed; // Flag indicating if the issue passed
         bool closed; // Flag indicating if the issue is closed
     }
+
+    // Enum to represent different vote options
+    enum Vote {
+        AGAINST,
+        FOR,
+        ABSTAIN
+    }
