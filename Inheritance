@@ -9,3 +9,13 @@ pragma solidity 0.8.17;
 abstract contract Employee {
     uint public idNumber; // Unique identifier for the employee
     uint public managerId; // Identifier of the manager overseeing the employee
+
+    /**
+     * @dev Constructor to initialize idNumber and managerId.
+     * @param _idNumber The unique identifier for the employee.
+     * @param _managerId The identifier of the manager overseeing the employee.
+     */
+    constructor(uint _idNumber, uint _managerId) {
+        idNumber = _idNumber;
+        managerId = _managerId;
+    }
