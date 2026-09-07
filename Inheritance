@@ -132,3 +132,11 @@ contract EngineeringManager is Salaried, Manager {
     constructor(uint _idNumber, uint _managerId, uint _annualSalary) 
         Salaried(_idNumber, _managerId, _annualSalary) {}
 }
+
+/**
+ * @title InheritanceSubmission
+ * @dev Contract for deploying instances of Salesperson and EngineeringManager.
+ */
+contract InheritanceSubmission {
+    address public salesPerson; // Address of the deployed Salesperson instance
+    address public engineeringManager; // Address of the deployed EngineeringManager instance
