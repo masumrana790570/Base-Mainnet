@@ -13,3 +13,10 @@ interface ISubmission {
         string line2; // Second line of the haiku
         string line3; // Third line of the haiku
     }
+
+    // Function to mint a new haiku
+    function mintHaiku(
+        string memory _line1,
+        string memory _line2,
+        string memory _line3
+    ) external;
