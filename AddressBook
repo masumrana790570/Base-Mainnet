@@ -26,3 +26,13 @@ contract AddressBook is Ownable(msg.sender) {
 
     // Custom error for when a contact is not found
     error ContactNotFound(uint id);
+
+    // Function to add a new contact
+    function addContact(string calldata firstName, string calldata lastName, uint[] calldata phoneNumbers) external onlyOwner {
+        // Create a new contact with the provided details and add it to the contacts array
+        contacts.push(Contact(nextId, firstName, lastName, phoneNumbers));
+        // Map the ID of the new contact to its index in the array
+        idToIndex[nextId] = contacts.length - 1;
+        // Increment the nextId for the next contact
+        nextId++;
+    }
