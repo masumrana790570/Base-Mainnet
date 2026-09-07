@@ -36,3 +36,20 @@ contract AddressBook is Ownable(msg.sender) {
         // Increment the nextId for the next contact
         nextId++;
     }
+
+    // Function to delete a contact by its ID
+    function deleteContact(uint id) external onlyOwner {
+        // Get the index of the contact to be deleted
+        uint index = idToIndex[id];
+        // Check if the index is valid and if the contact with the provided ID exists
+        if (index >= contacts.length || contacts[index].id != id) revert ContactNotFound(id);
+
+        // Replace the contact to be deleted with the last contact in the array
+        contacts[index] = contacts[contacts.length - 1];
+        // Update the index mapping for the moved contact
+        idToIndex[contacts[index].id] = index;
+        // Remove the last contact from the array
+        contacts.pop();
+        // Delete the mapping entry for the deleted contact ID
+        delete idToIndex[id];
+    }
