@@ -9,3 +9,11 @@ import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 contract WeightedVoting is ERC20 {
     string private salt = "value"; // A private string variable
     using EnumerableSet for EnumerableSet.AddressSet; // Importing EnumerableSet for address set functionality
+
+    // Custom errors
+    error TokensClaimed(); // Error for attempting to claim tokens again
+    error AllTokensClaimed(); // Error for attempting to claim tokens when all are already claimed
+    error NoTokensHeld(); // Error for attempting to perform an action without holding tokens
+    error QuorumTooHigh(); // Error for setting a quorum higher than total supply
+    error AlreadyVoted(); // Error for attempting to vote more than once
+    error VotingClosed(); // Error for attempting to vote on a closed issue
