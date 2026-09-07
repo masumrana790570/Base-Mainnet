@@ -26,3 +26,20 @@ abstract contract Employee {
      */
     function getAnnualCost() public virtual returns (uint);
 }
+
+/**
+ * @title Salaried
+ * @dev Contract representing employees who are paid an annual salary.
+ */
+contract Salaried is Employee {
+    uint public annualSalary; // The annual salary of the employee
+
+    /**
+     * @dev Constructor to initialize the Salaried contract.
+     * @param _idNumber The unique identifier for the employee.
+     * @param _managerId The identifier of the manager overseeing the employee.
+     * @param _annualSalary The annual salary of the employee.
+     */
+    constructor(uint _idNumber, uint _managerId, uint _annualSalary) Employee(_idNumber, _managerId) {
+        annualSalary = _annualSalary;
+    }
