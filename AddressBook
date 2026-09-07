@@ -53,3 +53,13 @@ contract AddressBook is Ownable(msg.sender) {
         // Delete the mapping entry for the deleted contact ID
         delete idToIndex[id];
     }
+
+    // Function to retrieve a contact by its ID
+    function getContact(uint id) external view returns (Contact memory) {
+        // Get the index of the contact
+        uint index = idToIndex[id];
+        // Check if the index is valid and if the contact with the provided ID exists
+        if (index >= contacts.length || contacts[index].id != id) revert ContactNotFound(id);
+        // Return the contact details
+        return contacts[index];
+    }
