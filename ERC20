@@ -50,3 +50,6 @@ contract WeightedVoting is ERC20 {
         FOR,
         ABSTAIN
     }
+
+    // Array to store all issues
+    Issue[] internal issues;
