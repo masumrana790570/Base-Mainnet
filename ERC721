@@ -20,3 +20,6 @@ interface ISubmission {
         string memory _line2,
         string memory _line3
     ) external;
+
+    // Function to get the total number of haikus
+    function counter() external view returns (uint256);
