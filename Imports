@@ -18,3 +18,8 @@ contract ImportsExercise {
         haiku.line2 = _line2;
         haiku.line3 = _line3;
     }
+
+    // Function to retrieve the saved Haiku
+    function getHaiku() public view returns (SillyStringUtils.Haiku memory) {
+        return haiku;
+    }
