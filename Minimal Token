@@ -7,3 +7,17 @@ contract UnburnableToken {
 
     // Mapping to track token balances of addresses
     mapping(address => uint256) public balances;
+
+    uint256 public totalSupply; // Total supply of tokens
+    uint256 public totalClaimed; // Total number of tokens claimed
+    mapping(address => bool) private claimed; // Mapping to track whether an address has claimed tokens
+
+    // Custom errors
+    error TokensClaimed(); // Error for attempting to claim tokens again
+    error AllTokensClaimed(); // Error for attempting to claim tokens when all are already claimed
+    error UnsafeTransfer(address _to); // Error for unsafe token transfer
+
+    // Constructor to set the total supply of tokens
+    constructor() {
+        totalSupply = 100000000; // Set the total supply of tokens
+    }
