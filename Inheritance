@@ -19,3 +19,10 @@ abstract contract Employee {
         idNumber = _idNumber;
         managerId = _managerId;
     }
+
+    /**
+     * @dev Abstract function to be implemented by derived contracts to get the annual cost of the employee.
+     * @return The annual cost of the employee.
+     */
+    function getAnnualCost() public virtual returns (uint);
+}
