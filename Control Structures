@@ -5,3 +5,23 @@ contract ControlStructures {
     // Define custom errors for use within the contract
     error AfterHours(uint256 time);
     error AtLunch();
+
+    // Function to determine the response based on the input number
+    function fizzBuzz(uint256 _number) public pure returns (string memory response) {
+        // Check if the number is divisible by both 3 and 5
+        if (_number % 3 == 0 && _number % 5 == 0) {
+            return "FizzBuzz"; // Return "FizzBuzz" if divisible by both 3 and 5
+        } 
+        // Check if the number is divisible by 3
+        else if (_number % 3 == 0) {
+            return "Fizz"; // Return "Fizz" if divisible by 3
+        } 
+        // Check if the number is divisible by 5
+        else if (_number % 5 == 0) {
+            return "Buzz"; // Return "Buzz" if divisible by 5
+        } 
+        // If none of the above conditions are met
+        else {
+            return "Splat"; // Return "Splat" if none of the conditions are met
+        }
+    }
