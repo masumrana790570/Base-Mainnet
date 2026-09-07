@@ -66,3 +66,26 @@ contract FavoriteRecords {
             userFavoritesIndex[msg.sender].push(_albumName);
         }
     }
+
+    /**
+     * @dev Returns the list of a user's favorite records
+     * @param _address The address of the user
+     * @return An array of user's favorite record names
+     */
+    function getUserFavorites(address _address) public view returns (string[] memory) {
+        return userFavoritesIndex[_address];
+    }
+
+    /**
+     * @dev Resets the caller's list of favorite records
+     */
+    function resetUserFavorites() public {
+        // Iterate through the user's favorite records
+        for (uint i = 0; i < userFavoritesIndex[msg.sender].length; i++) {
+            // Delete each record from the user's favorites mapping
+            delete userFavorites[msg.sender][userFavoritesIndex[msg.sender][i]];
+        }
+        // Delete the user's favorites index
+        delete userFavoritesIndex[msg.sender];
+    }
+}
