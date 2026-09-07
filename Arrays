@@ -18,3 +18,7 @@ uint256 constant Y2K = 946702800; // Constant representing the Unix timestamp fo
         for(uint i=0; i<numbers.length; i++) {
             results[i] = numbers[i];
         }
+
+        // Return the memory array
+        return results;
+    }
