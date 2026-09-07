@@ -40,3 +40,11 @@ contract FavoriteRecords {
             approvedRecords[approvedRecordsIndex[i]] = true;
         }
     }
+
+    /**
+     * @dev Returns the list of approved records
+     * @return An array of approved record names
+     */
+    function getApprovedRecords() public view returns (string[] memory) {
+        return approvedRecordsIndex;
+    }
