@@ -140,3 +140,14 @@ contract EngineeringManager is Salaried, Manager {
 contract InheritanceSubmission {
     address public salesPerson; // Address of the deployed Salesperson instance
     address public engineeringManager; // Address of the deployed EngineeringManager instance
+
+    /**
+     * @dev Constructor to initialize the InheritanceSubmission contract.
+     * @param _salesPerson Address of the deployed Salesperson instance.
+     * @param _engineeringManager Address of the deployed EngineeringManager instance.
+     */
+    constructor(address _salesPerson, address _engineeringManager) {
+        salesPerson = _salesPerson;
+        engineeringManager = _engineeringManager;
+    }
+}
