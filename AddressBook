@@ -14,3 +14,6 @@ contract AddressBook is Ownable(msg.sender) {
         string lastName; // Last name of the contact
         uint[] phoneNumbers; // Array to store multiple phone numbers for the contact
     }
+
+    // Array to store all contacts
+    Contact[] private contacts;
