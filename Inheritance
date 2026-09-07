@@ -43,3 +43,17 @@ contract Salaried is Employee {
     constructor(uint _idNumber, uint _managerId, uint _annualSalary) Employee(_idNumber, _managerId) {
         annualSalary = _annualSalary;
     }
+
+    /**
+     * @dev Overrides the getAnnualCost function to return the annual salary of the employee.
+     * @return The annual salary of the employee.
+     */
+    function getAnnualCost() public override view returns (uint) {
+        return annualSalary;
+    }
+}
+
+/**
+ * @title Hourly
+ * @dev Contract representing employees who are paid an hourly rate.
+ */
