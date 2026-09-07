@@ -57,3 +57,5 @@ contract Salaried is Employee {
  * @title Hourly
  * @dev Contract representing employees who are paid an hourly rate.
  */
+contract Hourly is Employee {
+    uint public hourlyRate; // The hourly rate of the employee
