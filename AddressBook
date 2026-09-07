@@ -23,3 +23,6 @@ contract AddressBook is Ownable(msg.sender) {
 
     // Variable to keep track of the ID for the next contact
     uint private nextId = 1;
+
+    // Custom error for when a contact is not found
+    error ContactNotFound(uint id);
