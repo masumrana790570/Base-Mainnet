@@ -11,3 +11,10 @@ contract ImportsExercise {
 
     // Declaring a public variable to store a Haiku
     SillyStringUtils.Haiku public haiku;
+
+    // Function to save a Haiku
+    function saveHaiku(string memory _line1, string memory _line2, string memory _line3) public {
+        haiku.line1 = _line1;
+        haiku.line2 = _line2;
+        haiku.line3 = _line3;
+    }
