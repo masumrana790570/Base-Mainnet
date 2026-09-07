@@ -43,3 +43,15 @@ uint256 constant Y2K = 946702800; // Constant representing the Unix timestamp fo
         timestamps.push(_unixTimestamp);
         senders.push(msg.sender);
     }
+
+    // Function to retrieve timestamps and senders after the year 2000
+    function afterY2K() public view returns (uint256[] memory, address[] memory) {
+        // Initialize counter for timestamps after Y2K
+        uint256 counter = 0;
+
+        // Count the number of timestamps after Y2K
+        for (uint i = 0; i < timestamps.length; i++) {
+            if (timestamps[i] > Y2K) {
+                counter++;
+            }
+        }
