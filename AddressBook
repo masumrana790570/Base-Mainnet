@@ -17,3 +17,6 @@ contract AddressBook is Ownable(msg.sender) {
 
     // Array to store all contacts
     Contact[] private contacts;
+
+    // Mapping to store the index of each contact in the contacts array using its ID
+    mapping(uint => uint) private idToIndex;
