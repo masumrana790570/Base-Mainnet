@@ -48,3 +48,21 @@ contract FavoriteRecords {
     function getApprovedRecords() public view returns (string[] memory) {
         return approvedRecordsIndex;
     }
+
+    /**
+     * @dev Adds an approved record to the user's favorites
+     * @param _albumName The name of the album to be added
+     */
+    function addRecord(string memory _albumName) public {
+        // Check if the record is approved
+        if (!approvedRecords[_albumName]) {
+            revert NotApproved({albumName: _albumName});
+        }
+        // Check if the record is not already in the user's favorites
+        if (!userFavorites[msg.sender][_albumName]) {
+            // Add the record to the user's favorites
+            userFavorites[msg.sender][_albumName] = true;
+            // Add the record to the user's favorites index
+            userFavoritesIndex[msg.sender].push(_albumName);
+        }
+    }
