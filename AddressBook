@@ -63,3 +63,10 @@ contract AddressBook is Ownable(msg.sender) {
         // Return the contact details
         return contacts[index];
     }
+
+    // Function to retrieve all contacts
+    function getAllContacts() external view returns (Contact[] memory) {
+        // Return the array of all contacts
+        return contacts;
+    }
+}
