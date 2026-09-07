@@ -3,3 +3,13 @@ pragma solidity ^0.8.0;
 
 // Importing OpenZeppelin ERC721 contract
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
+
+// Interface for interacting with a submission contract
+interface ISubmission {
+    // Struct representing a haiku
+    struct Haiku {
+        address author; // Address of the haiku author
+        string line1; // First line of the haiku
+        string line2; // Second line of the haiku
+        string line3; // Third line of the haiku
+    }
