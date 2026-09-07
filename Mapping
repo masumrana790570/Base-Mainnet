@@ -15,3 +15,6 @@ contract FavoriteRecords {
     mapping(address => mapping(string => bool)) public userFavorites;
     // Mapping to store the index of user's favorite records
     mapping(address => string[]) private userFavoritesIndex;
+
+    // Custom error to handle unapproved records
+    error NotApproved(string albumName);
