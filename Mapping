@@ -18,3 +18,25 @@ contract FavoriteRecords {
 
     // Custom error to handle unapproved records
     error NotApproved(string albumName);
+
+    /**
+     * @dev Constructor that initializes the approved records list
+     */
+    constructor() {
+        // Predefined list of approved records
+        approvedRecordsIndex = [
+            "Thriller", 
+            "Back in Black", 
+            "The Bodyguard", 
+            "The Dark Side of the Moon", 
+            "Their Greatest Hits (1971-1975)", 
+            "Hotel California", 
+            "Come On Over", 
+            "Rumours", 
+            "Saturday Night Fever"
+        ];
+        // Initialize the approved records mapping
+        for (uint i = 0; i < approvedRecordsIndex.length; i++) {
+            approvedRecords[approvedRecordsIndex[i]] = true;
+        }
+    }
