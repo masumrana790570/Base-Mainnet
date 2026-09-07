@@ -6,3 +6,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract AddressBook is Ownable(msg.sender) {
     // Define a private salt value for internal use
     string private salt = "value"; 
+
+    // Define a struct to represent a contact
+    struct Contact {
+        uint id; // Unique identifier for the contact
+        string firstName; // First name of the contact
+        string lastName; // Last name of the contact
+        uint[] phoneNumbers; // Array to store multiple phone numbers for the contact
+    }
